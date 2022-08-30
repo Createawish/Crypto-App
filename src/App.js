@@ -2,7 +2,7 @@ import React from 'react';
 import {Routes, Route, Link} from 'react-router-dom';
 import {Layout, Typography,Space} from 'antd';
 import {NavBar}from "./component";
-import { Exchanges, Home, Cryptocurrencies, News, CryptoDetails} from './pages/index'
+import { Exchanges, Home, Cryptocurrencies, News, CryptoDetails} from './pages'
 import './App.css';
 const App = () => {
     return (
@@ -14,21 +14,11 @@ const App = () => {
                 <Layout>
                     <div className='routes'>
                         <Routes>
-                            <Route exact path='/'>
-                                <Home/>
-                            </Route>
-                            <Route exact path='/exchange'>
-                                <Exchanges/>
-                            </Route>
-                            <Route exact path='/cryptocurrencies'>
-                                <Cryptocurrencies/>
-                            </Route>
-                            <Route exact path='/crypto/:coinId'>
-                                <CryptoDetails/>
-                            </Route>
-                            <Route exact path='/news'>
-                                <News/>
-                            </Route>
+                            <Route exact path='/' element={ <Home/>}/>
+                            <Route  path='/exchange' element={<Exchanges/>}/>
+                            <Route path='/cryptocurrencies' element={<Cryptocurrencies/>}/>
+                            <Route path='/crypto/:coinId' element={<CryptoDetails/>}/>
+                            <Route  path='/news' element={ <News/>}/>
                         </Routes>
                     </div>
                 </Layout>
